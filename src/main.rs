@@ -21,7 +21,7 @@ impl Component for Model {
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::AddOne => {
-                self.value += 2;
+                self.value += 3;
                 // the value has changed so we need to
                 // re-render for it to appear on the page
                 true
@@ -34,7 +34,7 @@ impl Component for Model {
         let link = ctx.link();
         html! {
             <div>
-                <button onclick={link.callback(|_| Msg::AddOne)}>{ "+2" }</button>
+                <button onclick={link.callback(|_| Msg::AddOne)}>{ "+3" }</button>
                 <p>{ self.value }</p>
             </div>
         }
